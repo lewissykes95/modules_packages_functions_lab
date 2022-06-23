@@ -9,9 +9,9 @@ tasks = [
 # Functions to complete:
 
 ## Get a list of uncompleted tasks
-def get_uncompleted_tasks(list):
+def get_uncompleted_tasks(lists):
     uncompleted_tasks = []
-    for task in list: 
+    for task in lists: 
         if task["completed"] == False:
             uncompleted_tasks.append(task)
     return uncompleted_tasks 
@@ -20,9 +20,9 @@ print(get_uncompleted_tasks(tasks))
     
 
 ## Get a list of completed tasks
-def get_completed_tasks(list):
+def get_completed_tasks(lists):
     completed_tasks = []
-    for task in list:
+    for task in lists:
         if task["completed"] == True:
             completed_tasks.append(task)
     return completed_tasks
@@ -30,12 +30,25 @@ def get_completed_tasks(list):
 print(get_completed_tasks(tasks))
 
 ## Get tasks where time_taken is at least a given time
-def get_tasks_taking_at_least(list, time):
-    pass
+def get_tasks_taking_at_least(lists, time):
+    time_list = []
+    for task in lists:
+        if task["time_taken"] >= time:
+            time_list.append(task)
+    return time_list
+print(get_tasks_taking_at_least(tasks, 20))
 
 ## Find a task with a given description
-def get_task_with_description(list, description):
-    pass
+def get_task_with_description(lists, description):
+    found_task = []
+    for task in lists: 
+        if task['description'] == description:
+            found_task.append(task)
+    return found_task
+
+print(get_task_with_description(tasks, "Walk Dog"))    
+ 
+
 
 # Extention (Function): 
 
