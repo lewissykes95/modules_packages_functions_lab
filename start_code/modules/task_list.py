@@ -53,8 +53,15 @@ print(get_task_with_description(tasks, "Walk Dog"))
 # Extention (Function): 
 
 ## Get a list of tasks by status
-def get_tasks_by_status(list, status):
-    pass
+def get_tasks_by_status(lists, status):
+    status_task = []
+    for task in lists: 
+        if task["completed"] == status:
+            status_task.append(task)
+    return status_task
+
+print(get_tasks_by_status(tasks, True))
+
 
 def mark_task_complete(task):
     task["completed"] = True
