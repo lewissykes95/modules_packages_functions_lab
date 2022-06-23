@@ -11,10 +11,23 @@ tasks = [
 ## Get a list of uncompleted tasks
 def get_uncompleted_tasks(list):
     uncompleted_tasks = []
+    for task in list: 
+        if task["completed"] == False:
+            uncompleted_tasks.append(task)
+    return uncompleted_tasks 
+
+print(get_uncompleted_tasks(tasks))
+    
 
 ## Get a list of completed tasks
 def get_completed_tasks(list):
-    pass
+    completed_tasks = []
+    for task in list:
+        if task["completed"] == True:
+            completed_tasks.append(task)
+    return completed_tasks
+
+print(get_completed_tasks(tasks))
 
 ## Get tasks where time_taken is at least a given time
 def get_tasks_taking_at_least(list, time):
